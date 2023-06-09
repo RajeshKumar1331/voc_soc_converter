@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+<script type="text/javascript" src="{{ url_for('static',filename='script/script.js') }}">
+  
+</script>
+
+</head>
+<body>
+
+<h2>Voc to SOC Conversion</h2>
+
+<form action="/submit" method='post'>
+  <label for="Voc">Enter Voc</label><br>
+  <input type="text" id="voc" name="voc" required><br>
+  <!-- <label for="Version">Battery Version</label><br>
+  <br>
+  <select class="drop_down" id="version" name="version" required>
+    <option class="null" value="" selected disabled hidden>Select an option</option>
+    <option value="R1"> R1</option>
+    <option value="R2">R2</option>
+    <option value="R3" selected> R3</option>
+  </select> -->
+  <p>Select battery Version</p>
+  <input type="radio" id="r1" name="bat_version" value="R1">
+  <label for="r1">R1</label>
+  <input type="radio" id="r2" name="bat_version" value="R2">
+  <label for="r2">R2</label>
+  <input type="radio" id="r3" name="bat_version" value="R3">
+  <label for="r3">R3</label>
+  <br>
+  <br>
+  <!-- <label for="Maths">Maths:</label><br>
+  <input type="text" id="maths" name="maths" value="0"><br><br>
+  <label for="C ">C:</label><br>
+  <input type="text" id="c" name="c" value="0"><br><br>
+  <label for="datascience">Data Science:</label><br>
+  <input type="text" id="datascience" name="datascience" value="0"><br><br> -->
+  <input type="submit" value="Submit">
+</form> 
+<div class="container">
+    <p class="text">The SOC at given Voc is  <strong>{{soc}} %</strong></p>
+</div>
+  
+</body>
+</html>
