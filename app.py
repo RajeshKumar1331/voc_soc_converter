@@ -1223,7 +1223,25 @@ voc_soc_R2_R3_atl = [
         [33364,9500],
         [33552,10000],
     ]
-
+voc_soc_R3_cbak = [
+        [29044,0],
+        [31800,200],
+        [32120,500],
+        [32276,1000],
+        [32545,1500],
+        [32736,2000],
+        [32958,3000],
+        [32997,4000],
+        [33020,5000],
+        [33141,6000],
+        [33358,7000],
+        [33362,8000],
+        [33366,8500],
+        [33374,9000],
+        [33382,9500],
+        [33434,9800],
+        [34130,10000]
+    ]
 
 
 @app.route('/')
@@ -1240,9 +1258,8 @@ def submit():
             arr=np.array(voc_soc_R1)
         elif version=="R2-ATL" or version=="R3-ATL":
             arr=np.array(voc_soc_R2_R3_atl)
-        # elif version=="R3-CBAK":
-        #     arr=np.array(voc_soc_R3_CBAK)
-        # Just add an array with the name voc_soc_R3_CBAK
+        elif version=="R3-CBAK":
+            arr=np.array(voc_soc_R3_cbak)
         x,y=np.split(arr,2,axis=1)
         x=x.flatten()
         y=y.flatten()
