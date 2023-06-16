@@ -1238,8 +1238,11 @@ def submit():
         version=request.form['bat_version']
         if version=="R1":
             arr=np.array(voc_soc_R1)
-        elif version=="R2" or version=="R3":
+        elif version=="R2-ATL" or version=="R3-ATL":
             arr=np.array(voc_soc_R2_R3_atl)
+        # elif version=="R3-CBAK":
+        #     arr=np.array(voc_soc_R3_CBAK)
+        # Just add an array with the name voc_soc_R3_CBAK
         x,y=np.split(arr,2,axis=1)
         x=x.flatten()
         y=y.flatten()
