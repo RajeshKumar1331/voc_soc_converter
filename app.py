@@ -1238,7 +1238,9 @@ def submit():
         version=request.form['bat_version']
         if version=="R1":
             arr=np.array(voc_soc_R1)
-        elif version=="R2" or version=="R3":
+        elif version=="R2_R3_atl":
+            arr=np.array(voc_soc_R2_R3_atl)
+        elif version=="R3_cbak":
             arr=np.array(voc_soc_R2_R3_atl)
         x,y=np.split(arr,2,axis=1)
         x=x.flatten()
